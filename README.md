@@ -10,7 +10,7 @@ A simple html & js app for managing personal bookings
 
 ## Live preview
 
-Open [https://github.com/jeradev/iBook-Web-App](https://github.com/jeradev/iBook-Web-App)
+Open [https://github.com/jeradev/iBook-App-Web](https://github.com/jeradev/iBook-App-Web)
 
 ## Configure the app (API)
 
