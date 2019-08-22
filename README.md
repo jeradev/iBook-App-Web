@@ -1,4 +1,4 @@
-# Booking app & Node as server side
+# Booking app
 
 A simple html & js app for managing personal bookings
 
