@@ -1,7 +1,7 @@
 const API_URL = "http://localhost:8090";
 
 window.addCustomer = {
-    getCustomer: function(){
+    getCustomer: function () {
         $.ajax({
             url: API_URL + "/customer",
             method: "GET"
@@ -11,5 +11,16 @@ window.addCustomer = {
             addCustomer.displayCustomers(response.content)
         });
     },
+
+    getCustomerHtml: function(customer){
+        return ``
+    },
+
+    displayCustomers: function (customer) {
+        let customersHTML = "";
+        customer.forEach(customer=>customersHTML += addCustomer.getCustomerHtml(customer));
+
+
+    }
 }
 addCustomer.getCustomer();

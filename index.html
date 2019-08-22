@@ -10,25 +10,6 @@
     <link rel="stylesheet" type="text/css" href="css/agenda.css">
 </head>
 <body>
-
-<form action="action_page.php">
-    <div class="imgcontainer">
-        <img alt="iBook" src="img/favicon.png" title="iBook">
-    </div>
-
-    <div class="container">
-        <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required="">
-
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required="">
-
-        <button type="submit">Login</button>
-        <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me   <span class="psw">Forgot <a
-                style="color: cornflowerblue" href="#">password?</a></span>
-        </label>
-</form>
 <div>
     <a href="." id="logo" title="iBook">
         <img alt="iBook" src="img/header.jpg" title="iBook">
@@ -120,7 +101,7 @@
 
 
                 Booking list
-                <table id="phone-book">
+                <table id="iBook">
                     <thead>
 
                     <tr>
@@ -135,30 +116,33 @@
                     </thead>
                     <tbody>
 
+                    <div id="customers-container" class="row">
+                        <tfoot>
+                        <tr>
+                            <td><input name="firstName" placeholder="Enter first name" required=""
+                                       type="text"></td>
+                            <td><input name="lastName" placeholder="Enter last name" type="text">
+                            </td>
+                            <td><input name="phone" placeholder="Enter phone" required=""
+                                       type="text">
+                            </td>
+                            <td><input name="period" placeholder="Enter period" required=""
+                                       type="text"></td>
+                            <td><input name="price" placeholder="Enter price" required=""
+                                       type="text">
+                            </td>
+
+                            <td>
+                                <button title="Save" type="submit">📌</button>
+                                <button onclick="iBook.cancelEdit()" title="Cancel" type="reset">✖</button>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </div>
                     </tbody>
-        <div id="customer-container" class="row">
-                    <tfoot>
-                    <tr>
-                        <td><input type="text" required name="firstName" placeholder="Enter first name" required=""
-                                   type="text"></td>
-                        <td><input type="text" required name="lastName" placeholder="Enter last name" type="text"></td>
-                        <td><input type="text" required name="phone" placeholder="Enter phone" required="" type="text">
-                        </td>
-                        <td><input type="text" required name="period" placeholder="Enter period" required=""
-                                   type="text"></td>
-                        <td><input type="text" required name="price" placeholder="Enter price" required="" type="text">
-                        </td>
-
-                        <td>
-                            <button title="Save" type="submit">📌</button>
-                            <button onclick="PhoneBook.cancelEdit()" title="Cancel" type="reset">✖</button>
-                        </td>
-                    </tr>
-                    </tfoot>
-
                 </table>
             </form>
-        </div>
+
     </div>
 
     <div class="clear"></div>

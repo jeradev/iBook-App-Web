@@ -1,24 +1,24 @@
 [
   {
     "id": 1,
-    "firstName": "Nicolae",
-    "lastName": "Matei",
+    "firstName": "Delia",
+    "lastName": "Maria",
     "phone": "0756010101",
     "period": "1-10 August",
     "price": "450 lei"
   },
   {
     "id": 2,
-    "firstName": "Andrei",
-    "lastName": "Ille",
+    "firstName": "Raluca",
+    "lastName": "Pop",
     "phone": "0755896321",
     "period": "10-15 August",
     "price": "500 lei"
   },
   {
     "id": 3,
-    "firstName": "Flaviu",
-    "lastName": "Ratiu",
+    "firstName": "Sebastian",
+    "lastName": "Ivanov",
     "phone": "0763852741",
     "period": "15-25 August",
     "price": "650 lei"
@@ -26,15 +26,15 @@
   {
     "id": 4,
     "firstName": "Daniel",
-    "lastName": "Cosman",
+    "lastName": "Ionescu",
     "phone": "0744589587",
     "period": "25-30 August",
     "price": "550 lei"
   },
   {
     "id": 5,
-    "firstName": "Remus",
-    "lastName": "Vescan",
+    "firstName": "Andrei",
+    "lastName": "Dascalu",
     "phone": "0256101000",
     "period": "30-10 Septembrie",
     "price": "400 lei"

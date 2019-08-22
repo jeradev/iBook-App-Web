@@ -15,7 +15,7 @@ const ACTION_METHODS = {
     DELETE: "GET"
 };
 
-window.PhoneBook = {
+window.iBook = {
     getRow: function(person) {
         // ES6 string template
         return `<tr>
@@ -37,8 +37,8 @@ window.PhoneBook = {
             method: ACTION_METHODS.READ
         }).done(function (persons) {
             console.info('done:', persons);
-            PhoneBookLocalActions.load(persons);
-            PhoneBook.display(persons);
+            iBookLocalActions.load(persons);
+            iBook.display(persons);
         });
     },
 
@@ -51,7 +51,7 @@ window.PhoneBook = {
             }
         }).done(function (response) {
             if (response.success) {
-                PhoneBookLocalActions.delete(id);
+                iBookLocalActions.delete(id);
             }
         });
     },
@@ -63,8 +63,8 @@ window.PhoneBook = {
             data: person
         }).done(function (response) {
             if (response.success) {
-                PhoneBook.cancelEdit();
-                PhoneBookLocalActions.add(person);
+                iBook.cancelEdit();
+                iBookLocalActions.add(person);
             }
         });
     },
@@ -76,22 +76,22 @@ window.PhoneBook = {
             data: person
         }).done(function (response) {
             if (response.success) {
-                PhoneBook.cancelEdit();
-                PhoneBookLocalActions.update(person);
+                iBook.cancelEdit();
+                iBookLocalActions.update(person);
             }
         });
     },
 
     bindEvents: function() {
-        $('#phone-book tbody').delegate('a.edit', 'click', function () {
+        $('#iBook tbody').delegate('a.edit', 'click', function () {
             var id = $(this).data('id');
-            PhoneBook.startEdit(id);
+            iBook.startEdit(id);
         });
 
-        $('#phone-book tbody').delegate('a.delete', 'click', function () {
+        $('#iBook tbody').delegate('a.delete', 'click', function () {
             var id = $(this).data('id');
             console.info('click on ', this, id);
-            PhoneBook.delete(id);
+            iBook.delete(id);
         });
 
         $(".add-form").submit(function() {
@@ -105,19 +105,19 @@ window.PhoneBook = {
 
             if (editId) {
                 person.id = editId;
-                PhoneBook.update(person);
+                iBook.update(person);
             } else {
-                PhoneBook.add(person);
+                iBook.add(person);
             }
         });
 
         document.getElementById('search').addEventListener('input', function(ev) {
             //const value = document.getElementById('search').value;
             const value = this.value;
-            PhoneBook.search(value);
+            iBook.search(value);
         });
         document.querySelector('.add-form').addEventListener('reset', function(ev) {
-            PhoneBook.search("");
+            iBook.search("");
         });
     },
 
@@ -147,9 +147,9 @@ window.PhoneBook = {
         var rows = '';
 
         // ES6 function systax inside forEach
-        persons.forEach(person => rows += PhoneBook.getRow(person));
+        persons.forEach(person => rows += iBook.getRow(person));
 
-        $('#phone-book tbody').html(rows);
+        $('#iBook tbody').html(rows);
     },
 
     search: function (value) {
@@ -161,13 +161,13 @@ window.PhoneBook = {
                 person.phone.toLowerCase().includes(value);
         });
 
-        PhoneBook.display(filtered);
+        iBook.display(filtered);
     }
 };
 
 
 // ES6 functions
-window.PhoneBookLocalActions = {
+window.iBookLocalActions = {
     load: (persons) => {
         // save in persons as global variable
         window.persons = persons;
@@ -176,12 +176,12 @@ window.PhoneBookLocalActions = {
     add: person => {
         person.id = new Date().getTime();
         persons.push(person);
-        PhoneBook.display(persons);
+        iBook.display(persons);
     },
     delete: id => {
         var remainingPersons = persons.filter(person => person.id !== id);
         window.persons = remainingPersons;
-        PhoneBook.display(remainingPersons);
+        iBook.display(remainingPersons);
     },
     update: person => {
         const id = person.id;
@@ -191,11 +191,11 @@ window.PhoneBookLocalActions = {
         personToUpdate.phone = person.phone;
         personToUpdate.period = person.period;
         personToUpdate.price = person.price;
-        PhoneBook.display(persons);
+        iBook.display(persons);
 
     }
 }
 
 console.info('loading persons');
-PhoneBook.load();
-PhoneBook.bindEvents();
+iBook.load();
+iBook.bindEvents();
