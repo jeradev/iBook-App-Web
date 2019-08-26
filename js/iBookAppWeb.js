@@ -3,13 +3,13 @@ var editId;
 
 // TODO edit API url's & ACTION_METHODS
 const API = {
-    CREATE: "./api/add.json",
-    READ: "./api/list.json",
-    UPDATE: "./api/update.json",
-    DELETE: "./api/delete.json"
+    CREATE: "http://localhost:8090/customer",
+    READ: "http://localhost:8090/customer",
+    UPDATE: "http://localhost:8090/customer",
+    DELETE: "http://localhost:8090/customer"
 };
 const ACTION_METHODS = {
-    CREATE: "GET",
+    CREATE: "POST",
     READ: "GET",
     UPDATE: "GET",
     DELETE: "GET"
@@ -37,8 +37,8 @@ window.iBook = {
             method: ACTION_METHODS.READ
         }).done(function (persons) {
             console.info('done:', persons);
-            iBookLocalActions.load(persons);
-            iBook.display(persons);
+            iBookLocalActions.load(persons.content);
+            iBook.display(persons.content);
         });
     },
 
@@ -60,7 +60,8 @@ window.iBook = {
         $.ajax({
             url: API.CREATE,
             method: ACTION_METHODS.CREATE,
-            data: person
+            contentType: "application/json",
+            data: JSON.stringify(person)
         }).done(function (response) {
             if (response.success) {
                 iBook.cancelEdit();
