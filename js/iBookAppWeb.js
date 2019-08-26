@@ -11,8 +11,8 @@ const API = {
 const ACTION_METHODS = {
     CREATE: "POST",
     READ: "GET",
-    UPDATE: "GET",
-    DELETE: "GET"
+    UPDATE: "PUT",
+    DELETE: "DELETE"
 };
 
 window.iBook = {

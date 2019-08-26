@@ -5,7 +5,7 @@
     "lastName": "Maria",
     "phone": "0756010101",
     "period": "1-10 August",
-    "price": "450 lei"
+    "price": "450"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "lastName": "Pop",
     "phone": "0755896321",
     "period": "10-15 August",
-    "price": "500 lei"
+    "price": "500"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "lastName": "Ivanov",
     "phone": "0763852741",
     "period": "15-25 August",
-    "price": "650 lei"
+    "price": "650"
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "lastName": "Ionescu",
     "phone": "0744589587",
     "period": "25-30 August",
-    "price": "550 lei"
+    "price": "550"
   },
   {
     "id": 5,
@@ -37,6 +37,6 @@
     "lastName": "Dascalu",
     "phone": "0256101000",
     "period": "30-10 Septembrie",
-    "price": "400 lei"
+    "price": "400"
   }
 ]
