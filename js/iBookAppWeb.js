@@ -69,9 +69,10 @@ window.iBook = {
 
     update: function(person) {
         $.ajax({
-            url: API.UPDATE,
+            url: API.UPDATE + "/" + person.id,
             method: ACTION_METHODS.UPDATE,
-            data: person
+            contentType: "application/json",
+            data: JSON.stringify(person)
         }).done(function (response) {
             if (response.success) {
                 iBook.cancelEdit();
