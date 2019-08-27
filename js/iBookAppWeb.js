@@ -44,11 +44,8 @@ window.iBook = {
 
     delete: function(id) {
         $.ajax({
-            url: API.DELETE,
-            method: ACTION_METHODS.DELETE,
-            data: {
-                id: id
-            }
+            url: API.DELETE + "/" + id,
+            method: ACTION_METHODS.DELETE
         }).done(function (response) {
             if (response.success) {
                 iBookLocalActions.delete(id);
